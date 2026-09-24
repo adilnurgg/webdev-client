@@ -88,7 +88,7 @@ export default async function AssignmentEditor({
                 <br />
                 <input type="date" id="wd-due-date" />
                 <br />
-                <label htmlFor="wd-available-from"><b>Available from </b></label> <label htmlFor="wd-available-until"><b> Until</b></label>
+                <label htmlFor="wd-available-from"><b>Available from </b></label> <label htmlFor="wd-available-until"><b>Until</b></label>
                 <br />
                 <input type="date" id="wd-available-from"></input> <input type="date" id="wd-available-until"></input> 
             </td>
