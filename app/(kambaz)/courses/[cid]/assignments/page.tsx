@@ -22,7 +22,6 @@ Due May 13 at 11:59pm | 100 pts"/>
 Due May 20 at 11:59pm | 100 pts"/>
         <AssignmentItem cid={cid} aid="789" title="A3 - JAVASCRIPT + REACT" details="Multiple Modules | Not available until May 20 at 12:00am |
 Due May 27 at 11:59pm | 100 pts"/>
-        
       </ul>
     </div>
   );
