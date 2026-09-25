@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function TOC() {
     return (
         <div>
-            <h1>Adilnur</h1>
+            <h1>Adilnur Istekov</h1>
             <ul>
                 <li>
                     <Link href="/labs" id="wd-home-link">
@@ -23,6 +23,9 @@ export default function TOC() {
                 </li>
                 <li>
                     <Link href="/labs/lab3">Lab 3</Link>
+                </li>
+                <li>
+                    <Link href="/labs/lab3">Lab 4</Link>
                 </li>
                 <li>
                     <Link href="/" id="wd-kambaz-link">
