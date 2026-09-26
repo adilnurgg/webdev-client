@@ -48,13 +48,13 @@ export default function YourForm() {
             <label htmlFor="wd-java">Java</label>
             <br />
             <input type="checkbox" name="python" id="wd-python" />
-            <label htmlFor="wd-java">Python</label>
+            <label htmlFor="wd-python">Python</label>
             <br />
             <input type="checkbox" name="javascript" id="wd-javascript" />
-            <label htmlFor="wd-java">Javascript</label>
+            <label htmlFor="wd-javascript">Javascript</label>
             <br />
             <input type="checkbox" name="c++" id="wd-c++" />
-            <label htmlFor="wd-java">C++</label>
+            <label htmlFor="wd-c++">C++</label>
             <h4>Major:</h4>
             <select id="wd-major" defaultValue="COMPUTER SCIENCE">
               <option value="COMPUTER SCIENCE">Computer Science</option>
