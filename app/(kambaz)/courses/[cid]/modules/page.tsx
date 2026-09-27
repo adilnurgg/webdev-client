@@ -31,8 +31,16 @@ export default function Modules() {
             <li className="wd-content-item">Creating a React Application</li>
           </Lesson>
         </Module>
-        <Module title="Week 2">{/* Expand lessons on your own */}</Module>
-        <Module title="Week 3" />
+        <Module title="Week 2">
+          <Lesson title="LEARNING OBJECTIVES">
+            <li className="wd-content-item">Learn how to create user interfaces with HTML</li>
+          </Lesson>
+        </Module>
+        <Module title="Week 3">
+          <Lesson title="LEARNING OBJECTIVES">
+            <li className="wd-content-item">CSS Styling</li>
+          </Lesson>
+        </Module>
       </ul>
     </div>
   );
