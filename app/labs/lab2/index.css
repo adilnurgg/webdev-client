@@ -55,7 +55,8 @@ h3 {
   background-color: purple;
   color: gold;
 }
-p{
+
+p:where(.wd-test-rules-id){
   background-color: maroon;
   color: white;
 }

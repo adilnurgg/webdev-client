@@ -5,6 +5,7 @@ export default function Labs() {
     <div id="wd-labs">
       <h1>Labs</h1>
       <h2>Adilnur Istekov</h2>
+      <a href="https://github.com/adilnurgg/webdev-client" >https://github.com/adilnurgg/webdev-client</a>
       <ul>
         <li>
           <Link href="/labs/lab1">Lab 1: HTML Examples</Link>
