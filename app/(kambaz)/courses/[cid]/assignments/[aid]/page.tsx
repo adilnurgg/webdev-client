@@ -1,26 +1,29 @@
 import Link from "next/link";
+import * as db from "../../../../database";
 
 export default async function AssignmentEditor({
   params,
 }: {
-  params: Promise<{ cid: string }>;
+  params: Promise<{ cid: string; aid: string}>;
 }) {
-  const { cid } = await params;
+  const { cid, aid } = await params;
+  const assignment = db.assignments.find((a) => a._id === aid);
   return (
     <div id="wd-assignments-editor">
       <label htmlFor="wd-name">Assignment Name</label>
       <br />
-      <input className="h-8 w-full" id="wd-name" defaultValue="A1 - ENV + HTML" />
+      <input className="h-8 w-full" id="wd-name" defaultValue={assignment?.title ?? ""} />
       <br />
+      <p id="wd-assignment-id">Assignment id: {aid}</p>
       <br />
-      <textarea className ="h-50 w-full"id="wd-description" defaultValue="The assignment is available online Submit a link to the landing page of" />
+      <textarea className ="h-50 w-full"id="wd-description" defaultValue={assignment?.description ?? ""} />
       <br />
       <div className="mt-4 grid grid-cols-6 gap-4">
         <div className="col-span-2 text-right">
           <label htmlFor="wd-points">Points</label>
         </div>
         <div className="col-span-4">
-          <input className="h-8 w-full" id="wd-points" defaultValue={100} />
+          <input className="h-8 w-full" id="wd-points" defaultValue={assignment?.points ?? 100} />
         </div>
         <div className="col-span-2 text-right">
           <label htmlFor="wd-group">Assignment Group</label>
@@ -76,11 +79,11 @@ export default async function AssignmentEditor({
           <br />
           <label htmlFor="wd-due-date"><b>Due</b></label>
           <br />
-          <input type="date" id="wd-due-date" />
+          <input type="date" id="wd-due-date" defaultValue={assignment?.due}/>
           <br />
           <label htmlFor="wd-available-from"><b>Available from </b></label> <label className="m-1" htmlFor="wd-available-until"><b>Until</b></label>
           <br />
-          <input type="date" id="wd-available-from"></input> <input type="date" id="wd-available-until"></input>       
+          <input type="date" id="wd-available-from" defaultValue={assignment?.available}></input> <input type="date" id="wd-available-until"></input>       
         </div>
       </div>
       <label htmlFor="wd-ai-editor-notes">Sample notes</label>
