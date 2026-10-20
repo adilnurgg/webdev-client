@@ -12,7 +12,6 @@ export default function BooleanVariables() {
   let name = "Adilnur";
   let last = "Istekov"
   let false4 = name === last;
-  let false5 = "123" == 123;
   return (
     <div id="wd-boolean-variables">
       <h4>Boolean Variables</h4>
@@ -33,8 +32,6 @@ export default function BooleanVariables() {
       false3 = {false3 + ""}
       <hr />
       false4 = {false4 + ""}
-      <br />
-      true6 = {false5 + ""}
     </div>
   );
 }
