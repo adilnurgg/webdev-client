@@ -12,6 +12,7 @@ export default function BooleanVariables() {
   let name = "Adilnur";
   let last = "Istekov"
   let false4 = name === last;
+  
   return (
     <div id="wd-boolean-variables">
       <h4>Boolean Variables</h4>
