@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaFileAlt } from "react-icons/fa";
+import AssignmentDeletion from "./AssignmentDeletion";
 
 export default function AssignmentItem({
   cid, aid, title, details,
@@ -21,6 +22,8 @@ export default function AssignmentItem({
         </Link>
         <div className="mt-1 text-sm text-neutral-600">{details}</div>
       </div>
+      
+      <AssignmentDeletion assignmentId = {aid} />
     </li>
   );
 }

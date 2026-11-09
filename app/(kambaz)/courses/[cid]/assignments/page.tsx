@@ -1,16 +1,19 @@
+"use client"
 import { FaPlus, FaSearch } from "react-icons/fa";
 import AssignmentItem from "./AssignmentItem";
 import * as db from "../../../database";
+import { useAssignmentStore } from "@/app/(kambaz)/store/assignmentsStore";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 
-export default async function Assignments({
+export default function Assignments({
   params,
 }: {
   params: Promise<{ cid: string }>;
 }) {
-  const { cid } = await params;
-  const assignments = db.assignments.filter(
-    (assignment) => assignment.course === cid,
-  );
+  const { cid } = useParams();
+  const aid = "new";
+  const assignments = useAssignmentStore((state) => state.assignments).filter(a => a.course === cid);
   return (
     <div id="wd-assignments">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
@@ -30,13 +33,13 @@ export default async function Assignments({
           >
             <FaPlus /> Group
           </button>
-          <button
+          <Link
             id="wd-add-assignment"
-            type="button"
-            className="inline-flex items-center gap-1 rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white"
+            href={`/courses/${cid}/assignments/${aid}`}
+            className="inline-flex items-center gap-1 rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white no-underline"
           >
             <FaPlus /> Assignment
-          </button>
+          </Link>
         </div>
       </div>
       <h3
@@ -55,7 +58,7 @@ export default async function Assignments({
         {assignments.map((assignment) => (
           <AssignmentItem
             key={assignment._id}
-            cid={cid}
+            cid={String(cid)}
             aid={assignment._id}
             title={assignment.title}
             details={`Multiple Modules | Not available until ${assignment.available} | Due ${assignment.due} | ${assignment.points} pts`}
